@@ -1,0 +1,50 @@
+Exit\n
+Priority
+Time
+Description
+Back\n
+What do you want to do?\n
+Print all tasks in list\n
+Do you want to sort the list\n
+Search tasks in list\n
+by priority\n
+Enter the value 
+by time:\n
+by the word in the: \n
+Hour
+Minute
+Year
+Select a task\n
+Edit\n
+Delete\n
+Add task to list\n
+Clear the entire list\n
+You have 
+ tasks\n
+\nTask #
+Are you sure?\n
+No\n
+Yes\n
+Title
+Day
+Month
+Index: 
+\nIndex is incorrect\nType again\n
+What do you want to change?\n
+Apply changes\n
+Settings\n
+false
+true
+Change parameter\n
+Localization: 
+Auto-save: 
+Confirm filters\n
+\nResults: 
+Enter "-1" to cancel the parameter\n
+Date
+by date\n
+Value is incorrect\nType again\n\n
+There is no such date\n\n
+\n   Print the list for the:\n8.  day\n9.  week\n10. month\n
+Home\n
+You don't have any available tasks\n
