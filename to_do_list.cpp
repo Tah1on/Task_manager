@@ -69,7 +69,7 @@ void to_do_task::generate_raw(ofstream &data_file){
     data_file << ',';
     convert_67(data_file, &description);
 }
-
+/*
 void get_line(uint8_t row_index, string path = "D:/Projects(QT)/TaskManager/locale.data"){
     ifstream _locale(path);
     char stream_char_temp = NULL;
@@ -100,7 +100,7 @@ void cout_info(uint8_t row_index, bool locale){
     else
         get_line(row_index, "D:/Projects(QT)/TaskManager/interface.data");
 }
-
+*/
 void to_do_task::display_the_task(bool flag_locale){
     cout << '\n' << title << ' ';
     cout_info(1, flag_locale);
@@ -112,19 +112,8 @@ void to_do_task::display_the_task(bool flag_locale){
     cout << ": " << description << '\n';
 }
 
-uint8_t days_in_month(uint8_t month){
-    switch (month) {
-    case 2:
-        return 28;
-    case 4:
-    case 6:
-    case 9:
-    case 11:
-        return 30;
-    default:
-        return 31;
-    }
-}
+
+uint8_t days_in_month[13] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
 uint64_t to_do_task::get_for_sort(bool _case){
     if (!_case)
@@ -135,7 +124,7 @@ uint64_t to_do_task::get_for_sort(bool _case){
             if ((y % 4 == 0 && y % 100 != 0) || y % 400 == 0)
                 clock += 86400;
         for (uint8_t m = 1; m < month; m++)
-            clock += 86400 * days_in_month(m);
+            clock += 86400 * days_in_month[m];
         clock += 3600 * hour + 60 * minute;
         return clock;
     }
@@ -143,7 +132,7 @@ uint64_t to_do_task::get_for_sort(bool _case){
 }
 
 bool to_do_task::check_date(){
-    if (day <= days_in_month(month))
+    if (day <= days_in_month[month])
         return true;
     else if (((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) && month == 2 && day == 29)
         return true;
@@ -537,6 +526,17 @@ void to_do_list::print_list_for_the_(to_do_list *list, uint8_t _case, bool flag_
             *_minute = nullptr;
     string *_title = nullptr,
            *_description = nullptr;
+    /*
+    to_do_task task_filters("",
+                            "",
+                            uint8_t _priority,
+                            uint8_t _day,
+                            uint8_t _month,
+                            uint8_t _hour,
+                            uint8_t _minute,
+                            uint16_t _year);
+    Поправить
+    */
 
     _month = new uint8_t((uint8_t)st.wMonth);
     _year = new uint16_t((uint16_t)st.wYear);

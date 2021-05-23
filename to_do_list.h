@@ -5,7 +5,7 @@
 #include <string>
 #include <fstream>
 #include <Windows.h>
-//#include "output_funcs.h"
+#include "output_funcs.h"
 
 using namespace std;
 
@@ -20,10 +20,10 @@ private:
             minute;
     uint16_t year;
 
-    inline void convert_0(ofstream &, uint8_t *);
-    inline void convert_3(ofstream &, uint16_t *);
-    inline void convert_1245(ofstream &, uint8_t *);
-    inline void convert_67(ofstream &, string *);
+    void convert_0(ofstream &, uint8_t *);
+    void convert_3(ofstream &, uint16_t *);
+    void convert_1245(ofstream &, uint8_t *);
+    void convert_67(ofstream &, string *);
     bool search_by_word(string, string);
 
 public:
@@ -78,7 +78,7 @@ public:
 
 };
 
-void cout_info(uint8_t, bool = true);
+//void cout_info(uint8_t, bool = true);
 int longestsub(string, string);
 
 //  0  uint8_t  _priority,

@@ -1,12 +1,6 @@
-#ifndef OUTPUT_FUNCS_H
-#define OUTPUT_FUNCS_H
+#include "output_funcs.h"
 
-#include <iostream>
-#include <fstream>
-
-using namespace std;
-
-void get_line(uint8_t row_index, string path = "D:/Projects(QT)/TaskManager/locale.data"){
+void get_line(uint8_t row_index, string path){
     ifstream _locale(path);
     char stream_char_temp = NULL;
     string content_str,
@@ -30,11 +24,9 @@ void get_line(uint8_t row_index, string path = "D:/Projects(QT)/TaskManager/loca
     _locale.close();
 }
 
-void cout_info(uint8_t row_index, bool locale = true){
+void cout_info(uint8_t row_index, bool locale){
     if (locale == true)
         get_line(row_index);
     else
         get_line(row_index, "D:/Projects(QT)/TaskManager/interface.data");
 }
-
-#endif // OUTPUT_FUNCS_H
